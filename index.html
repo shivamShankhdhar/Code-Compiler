@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CODISH | ONLINE COMPILER</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="./customCss.css" rel="stylesheet">
+
+    <!-- bootstrap icons  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- code mirror  -->
+    <link rel="stylesheet" href="codemirror/lib/codemirror.css">
+    <!-- code mirror theme  -->
+    <link rel="stylesheet" href="codemirror/theme/blackboard.css">
+    <link rel="stylesheet" href="codemirror/theme/dracula.css">
+    <script src="codemirror/lib/codemirror.js"></script>
+    <!-- codemirror mode js -->
+    <script src="codemirror/mode/clike/clike.js"></script>
+    <script src="codemirror/mode/python/python.js"></script>
+    <!-- codemirror addon js -->
+    <script src="codemirror/addon/edit/closebrackets.js"></script>
+
+    <!-- /google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+
+
+  </head>
+  
+  <body>
+
+    <div class="container  top-menu mt-1">
+      <!-- menu bar  -->
+      <div class="row mb-2">
+        <div class="col col-6 logo">
+         < CODISH />
+          <!-- <span style="font-size: 10px;font: black;">Just code</span> -->
+        </div>
+
+        <!-- right sub menus  -->
+        <div class="col-6 right-menu">
+
+          <div class="right-menu-list mt-2">
+            <nav class="navbar navbar-expand-lg text-white">
+              <div class="container-fluid">
+               
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Disclaimer</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Privacy Policy</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      </ul>
+                    </li> -->
+                   
+                  </ul>
+                  
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="container px-3 rounded">
+        <!-- main container  -->
+        <div class="row">
+          <!-- left container  -->
+          <div class="col col-8">
+            <!-- top menus row  -->
+            <div class="row">
+              <!-- choose language container  -->
+              <div class="col-6 ">
+
+                <div class="row">
+                  <!-- choose langua container  -->
+                <div class="col-6 select float-left" title="choose programming language">
+                  <select class="form-select" onchange="selectLanguageChangeValue()" id="selectLanguage">
+                    <option >Language </option>
+                    <option value="C">C</option>
+                    <option selected value="JAVA">JAVA</option>
+                    <option value="PYTHON">PYTHON</option>
+                  </select>
+                </div>
+                <!-- choose theme container  -->
+                <div class="col-6 select" title="choose theme for editor">
+                  <select class="form-select" onchange="selectLanguageChangeValue()" id="selectTheme">
+                    <option selected>Choose Theme </option>
+                    <option value="blackboard">Black Board</option>
+                    <option value="cobalt">Cobalt</option>
+                    <option value="colorfrth">Color Forth</option>
+                    <option value="darcula">Darcula</option>
+                    <option value="dracula">Dracula</option>
+                  </select>
+                </div>
+                </div>
+              </div>
+
+              
+              <!-- code run buttons container -->
+              <div class="col-6 code-run-buttons">
+                <button  class="btn btn button text-white " onclick="cleanEditor()" id="clean-editor-btn" title="CLEAN EDITOR"><i class="bi bi-arrow-clockwise"></i>RESET </button>
+                <button class="btn btn button" title="CODE RUNNER"><i class="bi bi-code"></i> CODE RUNNER</button>
+                <button  class="btn btn button" title="RUN CODE"><i class="bi bi-play-fill"></i> RUN </button>
+
+                
+              </div>
+            </div>
+            <!-- editor row  -->
+            <div class="row">
+              <div class="col">
+                <!-- text area  -->
+                <div class="mb-3 mt-2 rounded">
+                  <!-- <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label> -->
+                  <textarea class="form-control" id="editor"></textarea>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!-- right container  -->
+          <div class="col-4 right-container mt-5">
+            <div class="row">
+              <div class="col">
+                <div class="mb-3">
+                  <label for="exampleFormControlTextarea1" class="form-label ">Input</label>
+                  <textarea class="form-control input" id="input-textarea" placeholder="Input will be entered from here..." id="exampleFormControlTextarea1" ></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="mb-3">
+                  <label for="exampleFormControlTextarea1" class="form-label ">Output</label>
+                  <textarea class="form-control output" id="output-textarea" placeholder="Output will Display Here..." readonly id="exampleFormControlTextarea1" ></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById("editor"),{
+          mode: "text/x-c++src",
+          theme: "blackboard",
+          lineNumbers:true,
+          autoCloseBrackets:true,
+
+        });
+
+        var width = window.innerWidth;
+        editor.setSize(0.52*width,"480");
+     
+      function selectLanguageChangeValue (){
+        var selectLanguage = document.getElementById("selectLangauge");
+        if(selectLanguage.value === "JAVA"){
+          editor.setOption("mode","text/x-java");
+        }else if(selectLanguage.value === "PYTHON"){
+          editor.setOption("mode","text/x-java");
+        }else{
+          editor.setOption("mode","text/x-c++src");
+        }
+      }
+      
+      function selectThemeChangeValue (){
+        var chooseTheme = document.getElementById("selectTheme");
+        if(chooseTheme.value === "dracula"){
+          editor.setOption("theme","dracula");
+        }else{
+          editor.setOption("theme","blackboard");
+        }
+       }
+
+
+       function cleanEditor(){
+        var editorValue = document.getElementById("editor");       
+        console.log(editorValue.value);
+       }
+      
+      </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
