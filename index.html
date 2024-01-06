@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CODISH | ONLINE COMPILER</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link href="./customCss.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./static/css/customCss.css" rel="stylesheet">
 
     <!-- bootstrap icons  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -96,12 +96,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
     
     <!-- custom js files  -->
-    <script src="programmingLanguageList.js"></script>
-    <script src="themesList.js"></script>
+    <script src="static/js/programmingLanguageList.js"></script>
+    <script src="static/js/themesList.js"></script>
   </head>
-  
   <body>
-
     <div class="container  top-menu mt-1">
       <!-- menu bar  -->
       <div class="row mb-2">
@@ -112,7 +110,7 @@
         <!-- right sub menus  -->
         <div class="col-6 right-menu">
 
-          <div class="right-menu-list mt-2">
+          <div class="right-menu-list ">
             <nav class="navbar navbar-expand-lg text-white">
               <div class="container-fluid">
                
@@ -135,6 +133,10 @@
                       <a class="nav-link" href="#">Contact</a>
                     </li>
 
+                    <li class="nav-item">
+                      <a class="nav-link" href="https://techwithshiddh.blogspot.com/">Blog</a>
+                    </li>
+
                   </ul>
                 </div>
               </div>
@@ -149,19 +151,21 @@
           <!-- left container  -->
           <div class="col col-8">
             <!-- top menus row  -->
-            <div class="row">
+            <div class="row" >
               <!-- choose language container  -->
               <div class="col-6 ">
 
                 <div class="row">
                   <!-- choose langua container  -->
                 <div class="col-6 select float-left" title="choose programming language">
+                  <label for="selectLanguage" class="form-label">Choose Language</label>
                   <select class="form-select" onchange="selectLanguageChangeValue()" id="selectLanguage">
                     <option >Language </option>
                   </select>
                 </div>
                 <!-- choose theme container  -->
                 <div class="col-6 select" title="choose theme for editor">
+                  <label for="selectTheme" class="form-label">Choose Theme</label>
                   <select class="form-select" onchange="selectedThemeOnChange()" id="selectTheme">
                     <option selected>Choose Theme </option> 
                   </select>
@@ -171,12 +175,16 @@
 
               
               <!-- code run buttons container -->
-              <div class="col-6 code-run-buttons">
-                <button  class="btn btn button text-white " onclick="cleanEditor()" id="clean-editor-btn" title="CLEAN EDITOR"><i class="bi bi-arrow-clockwise"></i>RESET </button>
-                <button class="btn btn button" title="CODE RUNNER"><i class="bi bi-code"></i> CODE RUNNER</button>
-                <button  class="btn btn button" title="RUN CODE"><i class="bi bi-play-fill"></i> RUN </button>
-
-                
+              <div class="col-6 code-run-buttons" style="margin-top: 32px;">
+                <div class="row">
+                  <div class="col-6">
+                    <!-- <button class="btn btn button" title="CODE RUNNER"><i class="bi bi-code"></i> CODE RUNNER</button> -->
+                  </div>
+                  <div class="col-6">
+                    <button  class="btn btn button" id="run-button" title="RUN CODE"><i class="bi bi-play-fill"></i> RUN</button>
+                  </div>
+                </div>
+    
               </div>
             </div>
             <!-- editor row  -->
@@ -192,7 +200,7 @@
             </div>
           </div>
           <!-- right container  -->
-          <div class="col-4 right-container mt-5">
+          <div class="col-4 right-container">
             <div class="row">
               <div class="col">
                 <div class="mb-3">
@@ -213,7 +221,9 @@
 
         </div>
       </div>
-
+<div class="container footer h-50 text-center">
+Designed and Engineered by Er. Shivam Shankhdhar.
+</div>
 
       <script>
         var editor = CodeMirror.fromTextArea(document.getElementById("editor"),{
@@ -227,25 +237,9 @@
         var width = window.innerWidth;
         editor.setSize(0.52*width,"480");
      
-      // function selectLanguageChangeValue (){
-      //   var selectLanguage = document.getElementById("selectLangauge");
-      //   if(selectLanguage.value === "JAVA"){
-      //     editor.setOption("mode","text/x-java");
-      //   }else if(selectLanguage.value === "PYTHON"){
-      //     editor.setOption("mode","text/x-java");
-      //   }else{
-      //     editor.setOption("mode","text/x-c++src");
-      //   }
-      // }
       
      
-
-
-       function cleanEditor(){
-        var editorValue = document.getElementById("editor");       
-        console.log(editorValue.value);
-       }
-    
+    // theme list from array 
    let selectList = document.getElementById("selectTheme");
    let items = themeList.sort(); 
    for(var i in items) {
@@ -257,8 +251,8 @@
     }
     selectList.appendChild(option);
    }      
-
-   function selectedThemeOnChange (){
+    // select theme based on the select theme option 
+      function selectedThemeOnChange (){
         var selectedTheme = document.getElementById("selectTheme").value;
         editor.setOption("theme",selectedTheme)
         
@@ -267,12 +261,50 @@
    let selectLanguage = document.getElementById("selectLanguage");
    let programmingLanguage = programmingLanguageList.sort(); 
    for(var i in programmingLanguageList) {
-    var option = document.createElement("option");
+    var option   = document.createElement("option");
     option.value = programmingLanguage[i];
-    option.text = programmingLanguage[i];
+    option.text  = programmingLanguage[i];
     selectLanguage.appendChild(option);
    }   
 
+   function selectLanguageChangeValue (){
+        // var selectLanguage = document.getElementById("selectLangauge");
+        if(selectLanguage.value === "JAVA"){
+          editor.setOption("mode","text/x-java");
+        }else if(selectLanguage.value === "PYTHON"){
+          let value = `print("Hello World!");`
+          editor.setOption("value",value); 
+          editor.setOption("mode","text/x-java");
+        }else{
+          editor.setOption("mode","text/x-c++src");
+        }
+      }
+  //  connecting api with frontend 
+
+  let input     = document.getElementById("input-textarea");
+  let output    = document.getElementById("output-textarea");
+  let runButton = document.getElementById("run-button");
+  var code;
+
+  runButton.addEventListener("click",async function(){
+    
+    code = {
+      "code":editor.getValue(),
+      "input":input.value,
+      "lang":selectLanguage.value,
+    };
+    var oData=await fetch("http://localhost:8000/compile",{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify(code)
+    })
+    
+    var d=await oData.json();
+    output.value = d.output;
+    
+  });
       </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
