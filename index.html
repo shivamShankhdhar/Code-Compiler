@@ -13,8 +13,72 @@
     <!-- code mirror  -->
     <link rel="stylesheet" href="codemirror/lib/codemirror.css">
     <!-- code mirror theme  -->
+    <link rel="stylesheet" href="codemirror/theme/3024-day.css">
+    <link rel="stylesheet" href="codemirror/theme/3024-night.css">
+    <link rel="stylesheet" href="codemirror/theme/abbott.css">
+    <link rel="stylesheet" href="codemirror/theme/abcdef.css">
+    <link rel="stylesheet" href="codemirror/theme/ambiance-mobile.css">
+    <link rel="stylesheet" href="codemirror/theme/ayu-dark.css">
+    <link rel="stylesheet" href="codemirror/theme/ayu-mirage.css">
+    <link rel="stylesheet" href="codemirror/theme/base16-dark.css">
+    <link rel="stylesheet" href="codemirror/theme/base16-light.css">
+    <link rel="stylesheet" href="codemirror/theme/bespin.css">
     <link rel="stylesheet" href="codemirror/theme/blackboard.css">
+    <link rel="stylesheet" href="codemirror/theme/cobalt.css">
+    <link rel="stylesheet" href="codemirror/theme/colorforth.css">
+    <link rel="stylesheet" href="codemirror/theme/darcula.css">
     <link rel="stylesheet" href="codemirror/theme/dracula.css">
+    <link rel="stylesheet" href="codemirror/theme/duotone-dark.css">
+    <link rel="stylesheet" href="codemirror/theme/duotone-light.css">
+    <link rel="stylesheet" href="codemirror/theme/eclipse.css">
+    <link rel="stylesheet" href="codemirror/theme/elegant.css">
+    <link rel="stylesheet" href="codemirror/theme/erlang-dark.css">
+    <link rel="stylesheet" href="codemirror/theme/gruvbox-dark.css">
+    <link rel="stylesheet" href="codemirror/theme/hopscotch.css">
+    <link rel="stylesheet" href="codemirror/theme/icecoder.css">
+    <link rel="stylesheet" href="codemirror/theme/idea.css">
+    <link rel="stylesheet" href="codemirror/theme/isotope.css">
+    <link rel="stylesheet" href="codemirror/theme/juejin.css">
+    <link rel="stylesheet" href="codemirror/theme/lesser-dark.css">
+    <link rel="stylesheet" href="codemirror/theme/liquibyte.css">
+    <link rel="stylesheet" href="codemirror/theme/lucario.css">
+    <link rel="stylesheet" href="codemirror/theme/material-darker.css">
+    <link rel="stylesheet" href="codemirror/theme/material-ocean.css">
+    <link rel="stylesheet" href="codemirror/theme/material-palenight.css">
+    <link rel="stylesheet" href="codemirror/theme/material.css">
+    <link rel="stylesheet" href="codemirror/theme/mbo.css">
+    <link rel="stylesheet" href="codemirror/theme/mdn-like.css">
+    <link rel="stylesheet" href="codemirror/theme/midnight.css">
+    <link rel="stylesheet" href="codemirror/theme/monokai.css">
+    <link rel="stylesheet" href="codemirror/theme/moxer.css">
+    <link rel="stylesheet" href="codemirror/theme/neat.css">
+    <link rel="stylesheet" href="codemirror/theme/neo.css">
+    <link rel="stylesheet" href="codemirror/theme/night.css">
+    <link rel="stylesheet" href="codemirror/theme/nord.css">
+    <link rel="stylesheet" href="codemirror/theme/oceanic-next.css">
+    <link rel="stylesheet" href="codemirror/theme/panda-syntax.css">
+    <link rel="stylesheet" href="codemirror/theme/paraiso-dark.css">
+    <link rel="stylesheet" href="codemirror/theme/paraiso-light.css">
+    <link rel="stylesheet" href="codemirror/theme/pastel-on-dark.css">
+    <link rel="stylesheet" href="codemirror/theme/railscasts.css">
+    <link rel="stylesheet" href="codemirror/theme/rubyblue.css">
+    <link rel="stylesheet" href="codemirror/theme/seti.css">
+    <link rel="stylesheet" href="codemirror/theme/shadowfox.css">
+    <link rel="stylesheet" href="codemirror/theme/solarized.css">
+    <link rel="stylesheet" href="codemirror/theme/ssms.css">
+    <link rel="stylesheet" href="codemirror/theme/the-matrix.css">
+    <link rel="stylesheet" href="codemirror/theme/tomorrow-night-bright.css">
+    <link rel="stylesheet" href="codemirror/theme/tomorrow-night-eighties.css">
+    <link rel="stylesheet" href="codemirror/theme/ttcn.css">
+    <link rel="stylesheet" href="codemirror/theme/twilight.css">
+    <link rel="stylesheet" href="codemirror/theme/vibrant-ink.css">
+    <link rel="stylesheet" href="codemirror/theme/xq-dark.css">
+    <link rel="stylesheet" href="codemirror/theme/xq-light.css">
+    <link rel="stylesheet" href="codemirror/theme/yeti.css">
+    <link rel="stylesheet" href="codemirror/theme/yonce.css">
+    <link rel="stylesheet" href="codemirror/theme/zenburn.css">
+    
+    <!-- js files  -->
     <script src="codemirror/lib/codemirror.js"></script>
     <!-- codemirror mode js -->
     <script src="codemirror/mode/clike/clike.js"></script>
@@ -30,8 +94,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
-
-
+    
+    <!-- custom js files  -->
+    <script src="programmingLanguageList.js"></script>
+    <script src="themesList.js"></script>
   </head>
   
   <body>
@@ -41,7 +107,6 @@
       <div class="row mb-2">
         <div class="col col-6 logo">
          < CODISH />
-          <!-- <span style="font-size: 10px;font: black;">Just code</span> -->
         </div>
 
         <!-- right sub menus  -->
@@ -53,9 +118,7 @@
                
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
+                   
                     <li class="nav-item">
                       <a class="nav-link" href="#">Disclaimer</a>
                     </li>
@@ -71,20 +134,8 @@
                     <li class="nav-item">
                       <a class="nav-link" href="#">Contact</a>
                     </li>
-                    <!-- <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown
-                      </a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                      </ul>
-                    </li> -->
-                   
+
                   </ul>
-                  
                 </div>
               </div>
             </nav>
@@ -107,20 +158,12 @@
                 <div class="col-6 select float-left" title="choose programming language">
                   <select class="form-select" onchange="selectLanguageChangeValue()" id="selectLanguage">
                     <option >Language </option>
-                    <option value="C">C</option>
-                    <option selected value="JAVA">JAVA</option>
-                    <option value="PYTHON">PYTHON</option>
                   </select>
                 </div>
                 <!-- choose theme container  -->
                 <div class="col-6 select" title="choose theme for editor">
-                  <select class="form-select" onchange="selectLanguageChangeValue()" id="selectTheme">
-                    <option selected>Choose Theme </option>
-                    <option value="blackboard">Black Board</option>
-                    <option value="cobalt">Cobalt</option>
-                    <option value="colorfrth">Color Forth</option>
-                    <option value="darcula">Darcula</option>
-                    <option value="dracula">Dracula</option>
+                  <select class="form-select" onchange="selectedThemeOnChange()" id="selectTheme">
+                    <option selected>Choose Theme </option> 
                   </select>
                 </div>
                 </div>
@@ -184,32 +227,44 @@
         var width = window.innerWidth;
         editor.setSize(0.52*width,"480");
      
-      function selectLanguageChangeValue (){
-        var selectLanguage = document.getElementById("selectLangauge");
-        if(selectLanguage.value === "JAVA"){
-          editor.setOption("mode","text/x-java");
-        }else if(selectLanguage.value === "PYTHON"){
-          editor.setOption("mode","text/x-java");
-        }else{
-          editor.setOption("mode","text/x-c++src");
-        }
-      }
+      // function selectLanguageChangeValue (){
+      //   var selectLanguage = document.getElementById("selectLangauge");
+      //   if(selectLanguage.value === "JAVA"){
+      //     editor.setOption("mode","text/x-java");
+      //   }else if(selectLanguage.value === "PYTHON"){
+      //     editor.setOption("mode","text/x-java");
+      //   }else{
+      //     editor.setOption("mode","text/x-c++src");
+      //   }
+      // }
       
-      function selectThemeChangeValue (){
-        var chooseTheme = document.getElementById("selectTheme");
-        if(chooseTheme.value === "dracula"){
-          editor.setOption("theme","dracula");
-        }else{
-          editor.setOption("theme","blackboard");
-        }
-       }
+     
 
 
        function cleanEditor(){
         var editorValue = document.getElementById("editor");       
         console.log(editorValue.value);
        }
-      
+    
+   let selectList = document.getElementById("selectTheme");
+   let items = themeList.sort(); 
+   for(var i in items) {
+    var option = document.createElement("option");
+    option.value = items[i];
+    option.text = items[i];
+    if(items[i] === "blackboard"){
+      option.setAttribute("selected",true);
+    }
+    selectList.appendChild(option);
+   }      
+
+   function selectedThemeOnChange (){
+        var selectedTheme = document.getElementById("selectTheme").value;
+        editor.setOption("theme",selectedTheme)
+        
+      }
+
+  
       </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
