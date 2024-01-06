@@ -48,6 +48,7 @@ body{
   max-height: 370px;
   border-radius: 10px;
   color: #22092C;
+  font-weight: bolder;
   /* overflow: hidden; */
 }
 
