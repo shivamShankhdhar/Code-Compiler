@@ -10,7 +10,7 @@ app.use("/static/css",express.static("D:/Projects/CodeEditor/static/css"));
 app.use("/static/js",express.static("D:/Projects/CodeEditor/static/js/"));
 
 app.use("/codemirror",express.static("D:/Projects/CodeEditor/codemirror"));
-app.get("/",function(req, res){
+app.get("/v-1.0/",function(req, res){
   compiler.flush(function(){
     console.log("All temerory files has been deleted");
   })

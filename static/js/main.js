@@ -1,12 +1,16 @@
+
 var editor = CodeMirror.fromTextArea(document.getElementById("editor"),{
   mode: "text/x-c++src",
-  theme: "blackboard",
   lineNumbers:true,
   autoCloseBrackets:true,
 
 });
+// editor value global variable 
+
+
+
 var width = window.innerWidth;
-editor.setSize(0.52*width,"480");
+editor.setSize(0.48*width,"480");
     // theme list from array 
     let selectList = document.getElementById("selectTheme");
     let items = themeList.sort(); 
@@ -14,7 +18,7 @@ editor.setSize(0.52*width,"480");
       var option = document.createElement("option");
       option.value = items[i];
       option.text = items[i];
-      if(items[i] === "blackboard"){
+      if(items[i] === "eclipse"){
         option.setAttribute("selected",true);
       }
       selectList.appendChild(option);
@@ -49,16 +53,15 @@ editor.setSize(0.52*width,"480");
         }
     //  connecting api with frontend 
 
-    let input     = document.getElementById("input-textarea");
+    // let input     = document.getElementById("input-textarea");
     let output    = document.getElementById("output-textarea");
     let runButton = document.getElementById("run-button");
     var code;
-
+    
     runButton.addEventListener("click",async function(){
-      
+      let copyText = editor.getValue();
       code = {
         "code":editor.getValue(),
-        "input":input.value,
         "lang":selectLanguage.value,
       };
       var oData=await fetch("http://localhost:8000/compile",{
@@ -73,12 +76,11 @@ editor.setSize(0.52*width,"480");
       output.value = d.output;
       
     });
-
+    
   let copyCodeBtn = document.getElementById("copyCodeButton");
   copyCodeBtn.addEventListener("click", () => {
-    console.log("code copy btn clicked");
-    var copyText = editor.getValue();
-
+    let copyText = editor.getValue();
+    if(copyText.length > 0){
     copyText.select;
     //copyText.setSelectionRange(0, 99999); // For mobile devices
 
@@ -87,14 +89,22 @@ editor.setSize(0.52*width,"480");
 
     // Alert the copied text
     alert("Code Copied");
+    }else{
+      alert("Please Enter Some Code to Copy, Happy Coding!");
+    }
   });
 
 //reset code editor according to selected language
 let resetCodeButton = document.getElementById("resetCodeButton");
 resetCodeButton.addEventListener("click",()=>{
-if(selectLanguage.value === "PYTHON"){
-  let v = 'print("Hello World!");';
-  editor.setOption("value"," "); 
-  editor.setOption("value",v); 
-}
+  if(selectLanguage.value === "PYTHON"){
+    let copyText = editor.getValue();
+    if(copyText.length > 0){
+      let v = 'print("Hello World!");';
+      editor.setOption("value"," "); 
+      editor.setOption("value",v); 
+    }else{
+      alert("There is already no code in the Editor, Happy Coding!");
+    }
+  }
 });

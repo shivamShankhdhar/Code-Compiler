@@ -100,15 +100,15 @@
     <script src="static/js/themesList.js"></script>
   </head>
   <body>
-    <div class="container  top-menu mt-1">
+    <div class="container-fluid  top-menu ">
       <!-- menu bar  -->
       <div class="row mb-2">
-        <div class="col col-6 logo">
+        <div class="col logo">
          < CODISH />
         </div>
 
         <!-- right sub menus  -->
-        <div class="col-6 right-menu">
+        <div class="col-4 right-menu">
 
           <div class="right-menu-list ">
             <nav class="navbar navbar-expand-lg text-white">
@@ -145,27 +145,27 @@
         </div>
       </div>
     </div>
-      <div class="container px-3 rounded">
+      <div class="container-fluid px-3 rounded">
         <!-- main container  -->
         <div class="row">
           <!-- left container  -->
-          <div class="col col-8">
+          <div class="col col-6">
             <!-- top menus row  -->
             <div class="row" >
               <!-- choose language container  -->
-              <div class="col-6 ">
+              <div class="col-9">
 
                 <div class="row">
                   <!-- choose langua container  -->
                 <div class="col-6 select float-left" title="choose programming language">
-                  <label for="selectLanguage" class="form-label">Choose Language</label>
+                  <label for="selectLanguage" class="form-label text-white">Choose Language</label>
                   <select class="form-select" onchange="selectLanguageChangeValue()" id="selectLanguage">
                     <option >Language </option>
                   </select>
                 </div>
                 <!-- choose theme container  -->
                 <div class="col-6 select" title="choose theme for editor">
-                  <label for="selectTheme" class="form-label">Choose Theme</label>
+                  <label for="selectTheme" class="form-label text-white">Choose Theme</label>
                   <select class="form-select" onchange="selectedThemeOnChange()" id="selectTheme">
                     <option selected>Choose Theme </option> 
                   </select>
@@ -175,9 +175,9 @@
 
               
               <!-- code run buttons container -->
-              <div class="col-6 code-run-buttons" style="margin-top: 32px;">
+              <div class="col-3 code-run-buttons" style="margin-top: 32px;">
                 <div class="row">
-                  <div class="col-">
+                  <div class="col">
                     <button class="btn btn-warning" title="COPY CODE" id="copyCodeButton"><i class="bi bi-copy"></i></button>
                     <button  class="btn btn-success" id="run-button" title="RUN CODE"><i class="bi bi-play-fill"></i></button>
                     <button  class="btn btn-danger" id="resetCodeButton" title="RESET CODE"><i class="bi bi-arrow-repeat"></i></button>
@@ -199,15 +199,7 @@
             </div>
           </div>
           <!-- right container  -->
-          <div class="col-4 right-container">
-            <div class="row">
-              <div class="col">
-                <div class="mb-3">
-                  <label for="exampleFormControlTextarea1" class="form-label ">Input</label>
-                  <textarea class="form-control input" id="input-textarea" placeholder="Input will be entered from here..." id="exampleFormControlTextarea1" ></textarea>
-                </div>
-              </div>
-            </div>
+          <div class="col-5 right-container">
             <div class="row">
               <div class="col">
                 <div class="mb-3">
@@ -220,7 +212,7 @@
 
         </div>
       </div>
-<div class="container footer h-50 text-center">
+<div class="container-fluid footer h-50 text-center">
 Designed and Engineered by Er. Shivam Shankhdhar.
 </div>
 

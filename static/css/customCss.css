@@ -1,22 +1,13 @@
 body{
-  font-family: 'Kanit', sans-serif;
-  background-color: #F4EAE0;
+  background-color: #9400FF;
 }
 .top-menu{
-  background-color: #22092C;
+  /* background-color: #22092C; */
   height: 60px;
   margin-bottom: 3px;
+  /* border-bottom: 1px solid #7D7C7C; */
 }
-/* .select {
-  background-color: #22092C;
-  border-radius: 5px;
-  width: 180px;
-} 
-.select select{
-  background: none;
-  color: #ffffff;
-  border: none;
-} */
+
 .select option{
   background-color: #22092C;
   color: #ffffff;
@@ -27,31 +18,28 @@ body{
   height: 80px;
   font-size: 40px;
   font-weight: bolder;
-  font-family: 'Bungee Spice', sans-serif;
+  /* font-family: 'Bungee Spice', sans-serif; */
 }
-.right-container{
-  background-color: #22092C;
-  height: 560px;
-  padding: 15px;
-  border-radius: 5px;
+
+.right-container label{
+  margin-top: 46px;
   color: #ffffff;
 }
-.right-container .input{
-  min-height:80px;
-  max-height: 80px;
-  border-radius: 10px;
-  color: #22092C;
-  /* overflow: hidden; */
-}
 .right-container .output{
-  min-height:370px;
-  max-height: 370px;
-  border-radius: 10px;
+  padding: 10px;
+  min-height:480px;
+  max-height: 480px;
+  width: 660px;
+  margin-left: -15px!important;
   color: #22092C;
+  outline: none;
+  border-radius: 0px!important;
   font-weight: bolder;
   /* overflow: hidden; */
 }
-
+.right-container .output:focus{
+  outline: none;
+}
 .top-menu .right-menu{
   height: 80px;
    
@@ -66,33 +54,10 @@ body{
   color: #ffffff;
 }
 
-
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #E36414;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #FB8B24;
-}
-
 .footer{
   height: 50px;
   line-height: 50px;
   font-size: 15px;
-  background-color: #22092C;
   color: #ffffff;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  
 }
